@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right bottom, #232323, #282828, #2e2e2e, #333333, #393939, #3c3c3c, #3f3f3f, #424242, #424342, #434343, #434443, #444444);
+}
+pre {
+    display: block;
+    box-sizing: border-box;
+    margin: 1em 0;
+    white-space: pre;
+}
