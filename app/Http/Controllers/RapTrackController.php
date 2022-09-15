@@ -28,7 +28,14 @@ class RapTrackController extends Controller
      */
     public function create()
     {
-        //
+        RapTrack::create([
+            'name' => $_POST['author'].'-'.$_POST['name'],
+            'track_file' => 'test',
+            'en_lyric' => 'dsfdsfsdfsdfsfd',
+            'ru_lyric' => 'ывавыаыаваываыаыв',
+        ]);
+
+        return json_decode(RapTrack::all()->last());
     }
 
     /**
@@ -61,7 +68,7 @@ class RapTrackController extends Controller
      */
     public function edit(RapTrack $rapTrack)
     {
-        //
+        return view('page_blocks.add-track-form');
     }
 
     /**

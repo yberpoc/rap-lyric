@@ -9,6 +9,13 @@ class RapTrack extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'track_file',
+        'en_lyric',
+        'ru_lyric',
+    ];
+
     static public function getTrackById($id)
     {
         return self::where('id', $id)->first();
