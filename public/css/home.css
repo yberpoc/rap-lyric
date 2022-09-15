@@ -55,7 +55,7 @@
     width: 310px;
     max-width: inherit;
 }
-.search__input { 
+.search__input {
     width: 250px;
     margin: 10px 0 5px 0;
     padding: 3px 8px;
@@ -119,6 +119,7 @@
     gap: 20px;
 }
 .top-panel__item {
+    border: none;
     font-size: 30px;
     font-weight: 600;
     color: white;
