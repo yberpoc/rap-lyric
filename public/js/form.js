@@ -1,25 +1,11 @@
 let formOpen = document.querySelector('.top-panel__item')
-let url = 'http://rap-lyric/popup-add-track';
+
+let url = '/popup-add-track';
+
 
 let body = document.querySelector('.body')
 
 formOpen.addEventListener('click', () => {
-    /*body.insertAdjacentHTML('afterbegin',
-    `<div class="form-container">
-                <div class="form-block">
-                    <button class="form__close">X</button>
-                    <form class="form_content">
-                        <h2 class="form_content__title">ADD TRACK</h2>
-                        <input class="form-input" type="text" placeholder="name">
-                        <input class="form-input" type="text" placeholder="author">
-                        <div class="form_content__bottom-buttons">
-                            <input class="form-input" type="file" placeholder="track">
-                            <input class="form-input --submit" type="submit" value="add">
-                        </div>
-                    </form>
-                </div>
-            </div>`
-    );*/
     formOpen.setAttribute('disabled', '')
     fetch(url)
         .then((response) => response.text())
@@ -46,9 +32,6 @@ function addTrack()
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         let formData = new FormData(form);
-
-        //console.log(formData.values())
-
         fetch('/add-track', {
             method: 'POST',
             body: formData
