@@ -4,22 +4,6 @@ let url = 'http://rap-lyric/popup-add-track';
 let body = document.querySelector('.body')
 
 formOpen.addEventListener('click', () => {
-    /*body.insertAdjacentHTML('afterbegin',
-    `<div class="form-container">
-                <div class="form-block">
-                    <button class="form__close">X</button>
-                    <form class="form_content">
-                        <h2 class="form_content__title">ADD TRACK</h2>
-                        <input class="form-input" type="text" placeholder="name">
-                        <input class="form-input" type="text" placeholder="author">
-                        <div class="form_content__bottom-buttons">
-                            <input class="form-input" type="file" placeholder="track">
-                            <input class="form-input --submit" type="submit" value="add">
-                        </div>
-                    </form>
-                </div>
-            </div>`
-    );*/
     formOpen.setAttribute('disabled', '')
     fetch(url)
         .then((response) => response.text())
@@ -56,14 +40,24 @@ function addTrack()
             .then((response) => response.json())
             .then((data) => {
                 let trackList = document.querySelector('.track-list')
-                //console.log(data)
 
-                trackList.insertAdjacentHTML('beforeend',
-                    '<div id="'+ data.id + '" class="track-list__item">' +
+                let elem = document.createElement('div')
+                elem.id = data.id
+                elem.classList.add('track-list__item')
+
+                elem.addEventListener('click', () => selectTrack(data.id))
+
+                elem.innerHTML = '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
+                    '     <div class="track-list__item-time">3:57</div>'
+
+                trackList.appendChild(elem)
+
+                /*trackList.insertAdjacentHTML('beforeend',
+                    '<div onclick="selectTrack()" id="'+ data.id + '" class="track-list__item">' +
                     '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
                     '     <div class="track-list__item-time">3:57</div>' +
                     '</div>'
-                )
+                )*/
             })
     })
 }
