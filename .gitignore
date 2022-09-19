@@ -4,6 +4,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/docker
 .env
 .env.backup
 .phpunit.result.cache
@@ -12,5 +13,6 @@ Homestead.yaml
 auth.json
 npm-debug.log
 yarn-error.log
+docker-compose.yml
 /.idea
 /.vscode

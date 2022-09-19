@@ -1,5 +1,7 @@
 let formOpen = document.querySelector('.top-panel__item')
-let url = 'http://rap-lyric/popup-add-track';
+
+let url = '/popup-add-track';
+
 
 let body = document.querySelector('.body')
 
@@ -30,9 +32,6 @@ function addTrack()
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         let formData = new FormData(form);
-
-        //console.log(formData.values())
-
         fetch('/add-track', {
             method: 'POST',
             body: formData

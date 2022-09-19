@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
     let track = document.querySelectorAll('.track-list__item');
