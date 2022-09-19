@@ -26,9 +26,9 @@
                     <div class="left-bar__top">
                         <h1 class="main_title left-bar__title">select track</h1>
                         <div class="left-bar__top-panel">
-                            <div title="add track" class="top-panel__item add-track">
+                            <button  title="add track" class="top-panel__item add-track">
                                 <p class="top-panel__item--add-track">+</p>
-                            </div>
+                            </button>
                         </div>
                     </div>
                     <div class="left-bar__container">

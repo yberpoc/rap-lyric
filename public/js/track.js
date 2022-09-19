@@ -5,7 +5,7 @@ let title = document.querySelector('.left-bar__title')
 for (let i = 0; i < track.length; i++){
     track[i].addEventListener('click', () => {
         let trackID = track[i].id
-        let url = 'http://rap-lyric/track/' + trackID;
+        let url = '/track/' + trackID;
 
         console.log(trackID);
         for (let i = 0; i < track.length; i++){
@@ -17,7 +17,7 @@ for (let i = 0; i < track.length; i++){
             .then((response) => response.json())
             .then((data) => {
                 title.innerHTML = data.name;
-                lyricBlock.innerHTML = 
+                lyricBlock.innerHTML =
                     `<div class="left-bar__block block-en">
                     <h2>EN</h2>
                         <p>`+ data.en_lyric +`</p>
