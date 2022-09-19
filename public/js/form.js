@@ -39,14 +39,24 @@ function addTrack()
             .then((response) => response.json())
             .then((data) => {
                 let trackList = document.querySelector('.track-list')
-                //console.log(data)
 
-                trackList.insertAdjacentHTML('beforeend',
-                    '<div id="'+ data.id + '" class="track-list__item">' +
+                let elem = document.createElement('div')
+                elem.id = data.id
+                elem.classList.add('track-list__item')
+
+                elem.addEventListener('click', () => selectTrack(data.id))
+
+                elem.innerHTML = '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
+                    '     <div class="track-list__item-time">3:57</div>'
+
+                trackList.appendChild(elem)
+
+                /*trackList.insertAdjacentHTML('beforeend',
+                    '<div onclick="selectTrack()" id="'+ data.id + '" class="track-list__item">' +
                     '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
                     '     <div class="track-list__item-time">3:57</div>' +
                     '</div>'
-                )
+                )*/
             })
     })
 }
