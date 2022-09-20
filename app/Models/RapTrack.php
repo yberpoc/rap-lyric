@@ -10,6 +10,7 @@ class RapTrack extends Model
     use HasFactory;
 
     protected $fillable = [
+        'author',
         'name',
         'track_file',
         'en_lyric',
