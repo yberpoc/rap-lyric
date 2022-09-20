@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\RapTrack;
+use Faker\Core\File;
+use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Requests\StoreRapTrackRequest;
 use App\Http\Requests\UpdateRapTrackRequest;
+use Illuminate\Support\Facades\Storage;
 use PhpParser\Node\Expr\BinaryOp\Concat;
 
 class RapTrackController extends Controller
@@ -26,10 +30,16 @@ class RapTrackController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+
+        print_r($request->file('track'));
+
+        $path = Storage::putFileAs('tracks', $request->file('track')->path(), $request->file('track')->hashName());
+
         RapTrack::create([
-            'name' => $_POST['author'].'-'.$_POST['name'],
+            'author' => $_POST['author'],
+            'name' => $_POST['name'],
             'track_file' => 'test',
             'en_lyric' => 'dsfdsfsdfsdfsfd',
             'ru_lyric' => 'ывавыаыаваываыаыв',

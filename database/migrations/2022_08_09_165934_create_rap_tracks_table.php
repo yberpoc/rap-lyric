@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('rap_tracks', function (Blueprint $table) {
             $table->id();
+            $table->string('author');
             $table->string('name');
             $table->string('track_file');
             $table->longText('en_lyric');
