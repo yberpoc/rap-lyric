@@ -6,6 +6,9 @@
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
 }
+.d-block {
+    display: block;
+}
 a {
     text-decoration: none;
     color: black;

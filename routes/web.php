@@ -21,3 +21,5 @@ Route::get('/track/{id}', [RapTrackController::class, 'getTrackById']);
 Route::get('/popup-add-track', [RapTrackController::class, 'edit']);
 
 Route::post('/add-track', [RapTrackController::class, 'create']);
+
+Route::get('/del-track/{id}', [RapTrackController::class, 'destroy']);

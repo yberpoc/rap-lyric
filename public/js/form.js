@@ -1,5 +1,7 @@
 let formOpen = document.querySelector('.top-panel__item')
-let url = 'http://rap-lyric/popup-add-track';
+
+let url = '/popup-add-track';
+
 
 let body = document.querySelector('.body')
 
@@ -30,9 +32,6 @@ function addTrack()
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         let formData = new FormData(form);
-
-        //console.log(formData.values())
-
         fetch('/add-track', {
             method: 'POST',
             body: formData
@@ -47,17 +46,10 @@ function addTrack()
 
                 elem.addEventListener('click', () => selectTrack(data.id))
 
-                elem.innerHTML = '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
+                elem.innerHTML = '<div class="track-list__item-name"> ' + data.author + ' - <span>' + data.name + '</span></div>\n' +
                     '     <div class="track-list__item-time">3:57</div>'
 
                 trackList.appendChild(elem)
-
-                /*trackList.insertAdjacentHTML('beforeend',
-                    '<div onclick="selectTrack()" id="'+ data.id + '" class="track-list__item">' +
-                    '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
-                    '     <div class="track-list__item-time">3:57</div>' +
-                    '</div>'
-                )*/
             })
     })
 }
