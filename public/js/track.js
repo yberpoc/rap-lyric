@@ -57,7 +57,7 @@ let activeIndex = -1;
 function selectTrack(trackID)
 {
     let track = [...document.querySelectorAll('.track-list__item')];
-    let lyricBlock = document.querySelector('.left-bar__content')
+    let lyricBlock = document.querySelector('.left-bar__container')
     let title = document.querySelector('.left-bar__title')
 
     let url = '/track/' + trackID;
@@ -80,18 +80,23 @@ function selectTrack(trackID)
                 title.innerHTML = data.name;
                 lyricBlock.innerHTML =
                     `
-                    <audio controls style="width:100%;max-width:600px;">
+                    <audio controls id="player" class="audio-control">
                         <source src="http://rap-lyric/`+ data.track_file +`" type="audio/mp3">
                         Тег audio не поддерживается вашим браузером.
                     </audio>
-                    <div class="left-bar__block block-en">
-                        <h2>EN</h2>
-                        <p>`+ data.en_lyric +`</p>
+
+                    <div class="left-bar__content">
+                        <div class="left-bar__block block-en">
+                            <h2>EN</h2>
+                            <p>`+ data.en_lyric +`</p>
+                        </div>
+                        <div class="left-bar__block block-ru">
+                            <h2>RU</h2>
+                            <p>`+ data.ru_lyric +`</p>
+                        </div>
                     </div>
-                    <div class="left-bar__block block-ru">
-                        <h2>RU</h2>
-                        <p>`+ data.ru_lyric +`</p>
-                    </div>`;
+
+                    `;
             })
 
 

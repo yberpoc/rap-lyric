@@ -21,9 +21,6 @@
                                     <div class="track-list__item-name">{{$arItem->author}} - <span>{{$arItem->name}}</span></div>
                                     <div class="track-list__item-time">3:57</div>
                                 </div>
-                                @if($arItem->track_file !== '/storage/null')
-                                    <embed src="http://rap-lyric/{{$arItem->track_file}}" autostart="true" hidden="true">
-                                @endif
                             </div>
                         @endforeach
                     </div>

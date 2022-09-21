@@ -153,10 +153,18 @@
     height: 815px;
     background-color:rgba(86, 86, 86, 1);
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
 }
 
+.audio-control
+{
+    width: 100%;
+}
+
+.audio-control::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.04);
+    width: 100%;
+    border-radius: 0;
+}
 .left-bar__content{
     padding: 30px 20px;
     display: flex;

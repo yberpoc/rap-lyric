@@ -113,8 +113,10 @@ class RapTrackController extends Controller
     {
         $arResult = RapTrack::getTrackById($id);
 
-        dd($arResult->track_file);
 
-        echo json_encode(RapTrack::getTrackById($id));
+        $arResult->track_file = Storage::url($arResult->track_file);
+        //dd($arResult->track_file);
+
+        echo json_encode($arResult);
     }
 }
