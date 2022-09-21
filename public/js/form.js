@@ -46,17 +46,10 @@ function addTrack()
 
                 elem.addEventListener('click', () => selectTrack(data.id))
 
-                elem.innerHTML = '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
+                elem.innerHTML = '<div class="track-list__item-name"> ' + data.author + ' - <span>' + data.name + '</span></div>\n' +
                     '     <div class="track-list__item-time">3:57</div>'
 
                 trackList.appendChild(elem)
-
-                /*trackList.insertAdjacentHTML('beforeend',
-                    '<div onclick="selectTrack()" id="'+ data.id + '" class="track-list__item">' +
-                    '    <div class="track-list__item-name"> Kanye West - <span>' + data.name + '</span></div>\n' +
-                    '     <div class="track-list__item-time">3:57</div>' +
-                    '</div>'
-                )*/
             })
     })
 }

@@ -74,12 +74,24 @@
     padding: 0 15px 20px 15px;
     margin-top: 100px;
 }
-.track-list__item:first-child {
-    margin-top: 0px;
+
+.track-list__item-block {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+.track-list__item-del {
+    cursor: pointer;
+    background-color: red;
+    border-radius: 8px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 9999;
+    left: 410px;
 }
 
 .track-list__item {
-    margin-top: 10px;
+    width: 100%;
     padding: 8px 8px;
     display: flex;
     justify-content: space-between;
@@ -141,10 +153,18 @@
     height: 815px;
     background-color:rgba(86, 86, 86, 1);
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
 }
 
+.audio-control
+{
+    width: 100%;
+}
+
+.audio-control::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.04);
+    width: 100%;
+    border-radius: 0;
+}
 .left-bar__content{
     padding: 30px 20px;
     display: flex;
